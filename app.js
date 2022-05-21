@@ -1,6 +1,6 @@
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
-const limitedOffer = document.querySelectorAll(".limitedOffer")
+
 
 const products = [
   {
@@ -90,18 +90,18 @@ const currentProductSizes = document.querySelectorAll(".size");
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    //change the current slide
+    //change l'etat du slider
     wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
-    //change the choosen product
+    //change le produit choisie
     choosenProduct = products[index];
 
-    //change texts of currentProduct
+    //change le texte du produit
     currentProductTitle.textContent = choosenProduct.title;
     currentProductPrice.textContent = "$" + choosenProduct.price;
     currentProductImg.src = choosenProduct.colors[0].img;
 
-    //assing new colors
+    //assigne une nouvel couleur
     currentProductColors.forEach((color, index) => {
       color.style.backgroundColor = choosenProduct.colors[index].code;
     });
